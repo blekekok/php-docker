@@ -1,24 +1,21 @@
 version: '3.8'
 
 services:
-  php:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    container_name: sb-php
-    restart: always
-    working_dir: /var/www/
-    volumes:
-      - web_data:/var/www
   nginx:
-    image: nginx:1.19-alpine
+    build: ./nginx/
     container_name: sb-nginx
     restart: always
     ports:
-      - "8000:80"
+      - 8000:80
     volumes:
       - web_data:/var/www
       - nginx:/etc/nginx
+  php:
+    build: ./php/
+    container_name: sb-php
+    restart: always
+    volumes:
+      - web_data:/var/www
 
 volumes:
   web_data:
