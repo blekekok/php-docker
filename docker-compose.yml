@@ -15,7 +15,7 @@ services:
     container_name: sb-nginx
     restart: always
     ports:
-      - 8000:80
+      - "8000:80"
     volumes:
       - web_data:/var/www
       - nginx:/etc/nginx
