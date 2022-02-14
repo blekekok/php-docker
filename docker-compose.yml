@@ -11,6 +11,7 @@ services:
       - web_data:/var/www
       - nginx:/etc/nginx
   php:
+    image: php:7.0-fpm
     build: ./php/
     container_name: sb-php
     restart: always
