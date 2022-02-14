@@ -4,7 +4,7 @@ services:
   sb:
     build:
       context: ./
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     container_name: sb-php
     restart: always
     working_dir: /var/www
